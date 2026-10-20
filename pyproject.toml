@@ -1,0 +1,26 @@
+[project]
+name = "onetouch-unlock"
+version = "0.1.0"
+description = "Probe and unlock Maxtor OneTouch II/III DriveLock enclosures with your own credential, read-only, from Linux"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+onetouch-unlock = "onetouch_unlock.maxtor_reader:main"
+oxford912-fw-read = "onetouch_unlock.oxford912_fw_read:main"
+
+[build-system]
+requires = ["uv_build>=0.6"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
